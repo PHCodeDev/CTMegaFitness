@@ -1,11 +1,38 @@
+import { useEffect } from "react";
 import OpenStreetMap from "../components/OpenStreetMap";
 import "font-awesome/css/font-awesome.min.css";
+import SobreNos from "../components/SobreNos";
+
 export default function Home() {
+  useEffect(() => {
+    const handleSmoothScroll = (e) => {
+      e.preventDefault();
+      const targetId = e.currentTarget.getAttribute("href").replace("#", "");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    const smoothScrollLinks = document.querySelectorAll('[data-scroll]');
+    smoothScrollLinks.forEach((link) =>
+      link.addEventListener("click", handleSmoothScroll)
+    );
+
+    return () => {
+      smoothScrollLinks.forEach((link) =>
+        link.removeEventListener("click", handleSmoothScroll)
+      );
+    };
+  }, []);
+
   return (
     <div>
       <section className='bg-[url("https://i.ibb.co/nP8z63Q/Principal.webp")] lg:bg-fixed bg-no-repeat bg-cover h-auto lg:h-[100vh] flex'>
         <div className="w-[90%] max-w-[1600px] mx-auto flex flex-col lg:flex-row justify-between gap-8 lg:gap-0">
-          
           <div className="flex flex-col justify-center text-white text-center lg:text-left items-center lg:items-start">
             <img
               className="my-8 lg:w-auto mb-4 lg:absolute lg:top-8 lg:left-16"
@@ -21,8 +48,9 @@ export default function Home() {
               <span className="text-marrom">CT MEGAFITNESS!</span>
             </h1>
             <a
-              className="bg-marrom text-cinza mt-4 w-full max-w-[200px] lg:w-52 font-semibold text-center p-3 text-[20px] lg:text-[22px] rounded-lg hover:scale-105 duration-500"
               href="#sobre-nos"
+              data-scroll
+              className="bg-marrom text-cinza mt-4 w-full max-w-[200px] lg:w-52 font-semibold text-center p-3 text-[20px] lg:text-[22px] rounded-lg hover:scale-105 duration-500"
             >
               Saiba Mais
             </a>
@@ -38,46 +66,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="sobre-nos" className="flex min-h-screen ">
-        <div className="w-[350px] lg:w-[1200px] 2xl:w-[1600px] mb-10 mx-auto flex flex-col lg:flex-row justify-between items-center">
-          <div className="mx-auto justify-center rounded-xl h-[420px] lg:h-[520px]  w-[350px] lg:w-[580px]  lg:ml-12 flex flex-col items-center 3xl:w-[570px]">
-            <img
-              className="lg:hover:-translate-y-2 transition-all lg:mt-10 w-[550px] 2xl:w-[600px]"
-              src="https://i.ibb.co/xfy8FcY/Group-6.webp"
-              alt=""
-            />
-          </div>
-          <div className="items-center lg:items-start flex flex-col justify-center font-medium 2xl:text-[20px]">
-            <div className="w-[330px] lg:w-[540px]">
-              <h3 className="mt-[-20px] lg:mt-0 font-karantina font-bold leading-none text-[50px] lg:text-[90px] 2xl:text-[30px]">
-                <span className="text-[30px] lg:text-[40px]">Sobre nós</span>
-                <br />
-                SOMOS O <br />
-                <span className="text-marrom">CT MEGAFITNESS</span>
-              </h3>
-              <p className="text-cinza text-[18px] mb-4 mt-4">
-                No CT MegaFitness, acreditamos que o exercício é para todos!
-                Desde a nossa fundação em dezembro de 2022, nossa missão tem
-                sido proporcionar saúde, conforto e bem-estar, criando um
-                ambiente acolhedor onde cada aluno possa alcançar sua melhor
-                versão. Com infraestrutura de ponta, equipamentos de última
-                geração e maquinário de biomecânica avançada, garantimos uma
-                experiência única para nossos alunos.
-              </p>
-              <a
-                className="bg-marrom block text-cinza w-52 font-semibold text-center p-2 lg:p-1 text-[25px] 2xl:text-[33px] lg:text-[22px] rounded-lg hover:scale-105 duration-500"
-                href="#form"
-              >
-                Saiba Mais
-              </a>
-            </div>
-          </div>
-        </div>
+      <section id="sobre-nos">
+        <SobreNos />
       </section>
 
       <section
         id="porque-ct"
-        className=" min-h-screen flex flex-col bg-cinza text-white"
+        className="min-h-screen flex flex-col bg-cinza text-white"
       >
         <h2 className="font-karantina mx-auto text-center font-bold leading-none text-[50px] lg:text-[80px] mt-16 2xl:text-[30px] mb-20">
           POR QUE ESCOLHER A CT MEGAFITNESS?
@@ -153,58 +148,54 @@ export default function Home() {
       </section>
 
       <section
-        id="porque-ct"
-        className=" lg:min-h-screen flex flex-col bg-cinza "
+        id="onde-nos-encontrar"
+        className="lg:min-h-screen flex flex-col bg-cinza "
       >
         <h2 className="text-marrom font-karantina mx-auto font-bold leading-none text-[50px] lg:text-[80px] mt-16 2xl:text-[30px] mb-20">
           ONDE NOS ENCONTRAR
         </h2>
         <OpenStreetMap />
       </section>
+      
       <footer className="bg-marrom py-8 font-semibold">
-  {/* Container principal */}
-  <div className="w-[90%] max-w-[1200px] mx-auto">
-    {/* Informações de contato */}
-    <div className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
-      <div className="flex items-start lg:items-center text-branco space-x-4">
-        <img
-          className="h-10"
-          src="https://i.ibb.co/1zS13WC/Rectangle-212.png"
-          alt="Ícone de endereço"
-        />
-        <p className="text-[16px] lg:text-[15px]">
-          R. Prefeito Catunda Fontele<br />  N•73,
-          Ipueiras, Ceará 
-        </p>
-      </div>
-
-      <div className="flex items-start lg:items-center text-branco space-x-4">
-        <img
-          className="h-9"
-          src="https://i.ibb.co/sHHrQQD/image-16.png"
-          alt="Ícone de telefone"
-        />
-        <p className="text-[18px] lg:text-[15px]">+55 88 99907-9676</p>
-      </div>
-
-      <div className="flex items-start lg:items-center text-branco space-x-4">
-        <img
-          className="h-7"
-          src="https://i.ibb.co/mcj7kxx/Rectangle-211.png"
-          alt="Ícone de e-mail"
-        />
-        <p className="text-[18px] lg:text-[15px]">diassispersonal@gmail.com</p>
-      </div>
-    </div>
-    <div className="h-[1px] bg-cinza my-5 w-full"></div>
-    <div className="flex items-center">
-      <p className="text-branco mx-auto text-center text-[14px] lg:text-[15px]">
-        Todos os direitos Reservados | CTMegaFitness - 2024
-      </p>
-    </div>
-  </div>
-</footer>
-
+        <div className="w-[90%] max-w-[1200px] mx-auto">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
+            <div className="flex items-start lg:items-center text-branco space-x-4">
+              <img
+                className="h-10"
+                src="https://i.ibb.co/1zS13WC/Rectangle-212.png"
+                alt="Ícone de endereço"
+              />
+              <p className="text-[16px] lg:text-[15px]">
+                R. Prefeito Catunda Fontele<br /> N•73,
+                Ipueiras, Ceará 
+              </p>
+            </div>
+            <div className="flex items-start lg:items-center text-branco space-x-4">
+              <img
+                className="h-9"
+                src="https://i.ibb.co/sHHrQQD/image-16.png"
+                alt="Ícone de telefone"
+              />
+              <p className="text-[18px] lg:text-[15px]">+55 88 99907-9676</p>
+            </div>
+            <div className="flex items-start lg:items-center text-branco space-x-4">
+              <img
+                className="h-7"
+                src="https://i.ibb.co/mcj7kxx/Rectangle-211.png"
+                alt="Ícone de e-mail"
+              />
+              <p className="text-[18px] lg:text-[15px]">diassispersonal@gmail.com</p>
+            </div>
+          </div>
+          <div className="h-[1px] bg-cinza my-5 w-full"></div>
+          <div className="flex items-center">
+            <p className="text-branco mx-auto text-center text-[14px] lg:text-[15px]">
+              Todos os direitos Reservados | CTMegaFitness - 2024
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
