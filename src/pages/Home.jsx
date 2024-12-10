@@ -39,8 +39,8 @@ export default function Home() {
               src="https://i.ibb.co/F6ZxTjP/LogoCt.png"
               alt="Logo CT MegaFitness"
             />
-            <h1 className="font-bold lg:w-[580px] mb-4 text-[28px] lg:text-[55px] font-karantina leading-tight">
-              <span className="text-[24px] lg:text-[30px]">
+            <h1 className="font-bold lg:w-[580px] 2xl:w-[800px] mb-4 text-[28px] lg:text-[55px] 2xl:text-[80px] font-karantina leading-tight">
+              <span className="text-[24px] lg:text-[30px] 2xl:text-[50px]">
                 TRANSFORME SUA VIDA:
               </span>
               <br />
@@ -58,7 +58,7 @@ export default function Home() {
 
           <div className="flex items-center lg:items-end">
             <img
-              className="hidden lg:block h-[570px]"
+              className="hidden lg:block h-[570px] 2xl:h-[800px]"
               src="https://i.ibb.co/VjPcSpc/Group-117.webp"
               alt="Mulher com um belo físico"
             />
@@ -74,16 +74,16 @@ export default function Home() {
         id="porque-ct"
         className="min-h-screen flex flex-col bg-cinza text-white"
       >
-        <h2 className="font-karantina mx-auto text-center font-bold leading-none text-[50px] lg:text-[80px] mt-16 2xl:text-[30px] mb-20">
+        <h2 className="font-karantina mx-auto text-center font-bold leading-none text-[50px] lg:text-[80px] mt-16 2xl:text-[100px] mb-20">
           POR QUE ESCOLHER A CT MEGAFITNESS?
         </h2>
         <div className="font-medium">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-[50%] px-[30px] lg:px-[60px] text-center lg:text-left my-8">
-              <h3 className="text-[34px] lg:text-[44px] font-bold font-karantina">
+              <h3 className="text-[34px] lg:text-[44px] 2xl:text-[54px] font-bold font-karantina">
                 Comunidade
               </h3>
-              <p className="text-[18px] lg:text-[20px] mb-4">
+              <p className="text-[18px] lg:text-[20px] 2xl:text-[30px] mb-4">
                 Aqui no CT MegaFitness, você encontra mais do que um espaço para
                 treinar: encontra uma comunidade acolhedora e motivadora.
                 Inspiramos cada aluno a superar seus limites e a alcançar seus
@@ -109,10 +109,10 @@ export default function Home() {
               />
             </div>
             <div className="lg:w-[50%] text-cinza px-[30px] lg:px-[60px] text-center lg:text-left my-8">
-              <h3 className="text-[34px] lg:text-[44px] font-bold font-karantina">
+              <h3 className="text-[34px] lg:text-[44px] 2xl:text-[54px] font-bold font-karantina">
                 Motivação
               </h3>
-              <p className="text-[18px] lg:text-[20px] mb-4">
+              <p className="text-[18px] lg:text-[20px] 2xl:text-[30px] mb-4">
                 Com professores altamente qualificados e sempre ao seu lado,
                 você nunca estará sozinho na sua jornada. Nosso ambiente foi
                 projetado para estimular o seu progresso, com treinos
@@ -124,10 +124,10 @@ export default function Home() {
 
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-[50%] px-[30px] lg:px-[60px] text-center lg:text-left my-8">
-              <h3 className="text-[34px] lg:text-[44px] font-bold font-karantina">
+              <h3 className="text-[34px] lg:text-[44px] 2xl:text-[54px] font-bold font-karantina">
                 Resultados
               </h3>
-              <p className="text-[18px] lg:text-[20px] mb-4">
+              <p className="text-[18px] lg:text-[20px] 2xl:text-[30px] mb-4">
                 No CT MegaFitness, seu sucesso é o nosso foco. Com
                 infraestrutura moderna, maquinário de última geração e planos de
                 treino pensados para cada necessidade, garantimos que você veja
@@ -151,7 +151,7 @@ export default function Home() {
         id="onde-nos-encontrar"
         className="lg:min-h-screen flex flex-col bg-cinza "
       >
-        <h2 className="text-marrom font-karantina mx-auto font-bold leading-none text-[50px] lg:text-[80px] mt-16 2xl:text-[30px] mb-20">
+        <h2 className="text-marrom font-karantina mx-auto font-bold leading-none text-[50px] lg:text-[80px] mt-16 2xl:text-[100px] mb-20">
           ONDE NOS ENCONTRAR
         </h2>
         <OpenStreetMap />
@@ -162,35 +162,35 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
             <div className="flex items-start lg:items-center text-branco space-x-4">
               <img
-                className="h-10"
+                className="h-10 2xl:h-14"
                 src="https://i.ibb.co/1zS13WC/Rectangle-212.png"
                 alt="Ícone de endereço"
               />
-              <p className="text-[16px] lg:text-[15px]">
+              <p className="text-[16px] lg:text-[15px] 2xl:text-[25px]">
                 R. Prefeito Catunda Fontele<br /> N•73,
                 Ipueiras, Ceará 
               </p>
             </div>
             <div className="flex items-start lg:items-center text-branco space-x-4">
               <img
-                className="h-9"
+                className="h-9 2xl:h-12"
                 src="https://i.ibb.co/sHHrQQD/image-16.png"
                 alt="Ícone de telefone"
               />
-              <p className="text-[18px] lg:text-[15px]">+55 88 99907-9676</p>
+              <p className="text-[18px] lg:text-[15px] 2xl:text-[25px]">+55 88 99907-9676</p>
             </div>
             <div className="flex items-start lg:items-center text-branco space-x-4">
               <img
-                className="h-7"
+                className="h-7 2xl:h-10"
                 src="https://i.ibb.co/mcj7kxx/Rectangle-211.png"
                 alt="Ícone de e-mail"
               />
-              <p className="text-[18px] lg:text-[15px]">diassispersonal@gmail.com</p>
+              <p className="text-[18px] lg:text-[15px] 2xl:text-[25px]">diassispersonal@gmail.com</p>
             </div>
           </div>
           <div className="h-[1px] bg-cinza my-5 w-full"></div>
           <div className="flex items-center">
-            <p className="text-branco mx-auto text-center text-[14px] lg:text-[15px]">
+            <p className="text-branco mx-auto text-center text-[14px] lg:text-[15px] 2xl:text-[25px]">
               Todos os direitos Reservados | CTMegaFitness - 2024
             </p>
           </div>

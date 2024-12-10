@@ -42,7 +42,7 @@ const OpenStreetMap = () => {
   return (
     <div
       id="map"
-      className="flex mx-auto w-[300px] lg:w-[1000px] h-[300px] lg:h-[500px] rounded-2xl border border-marrom mb-20"
+      className="flex mx-auto w-[300px] lg:w-[1000px] 2xl:w-[1200px] h-[300px] lg:h-[500px] 2xl:h-[800px] rounded-2xl border border-marrom mb-20"
     ></div>
   );
 };
