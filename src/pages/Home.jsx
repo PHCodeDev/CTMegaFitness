@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import OpenStreetMap from "../components/OpenStreetMap";
 import "font-awesome/css/font-awesome.min.css";
 import SobreNos from "../components/SobreNos";
+import FloatingChatBot from '../components/FloatingChatBot'
 
 export default function Home() {
   useEffect(() => {
@@ -31,6 +32,7 @@ export default function Home() {
 
   return (
     <div>
+      <FloatingChatBot/>
       <section className='bg-[url("https://i.ibb.co/nP8z63Q/Principal.webp")] lg:bg-fixed bg-no-repeat bg-cover h-auto lg:h-[100vh] flex'>
         <div className="w-[90%] max-w-[1600px] mx-auto flex flex-col lg:flex-row justify-between gap-8 lg:gap-0">
           <div className="flex flex-col justify-center text-white text-center lg:text-left items-center lg:items-start">

@@ -6,7 +6,7 @@ export default function SobreNos() {
 
   // Texto adicional que será exibido quando expandir
   const textoAdicional =
-    "Nosso espaço é projetado para oferecer conforto e funcionalidade, tornando cada treino um momento prazeroso e eficiente.Nossa equipe de professores altamente qualificados está sempre pronta para oferecer orientação personalizada, ajudando você a atingir seus objetivos de saúde e desenvolvimento com excelência.Aqui, colocamos nossos alunos em primeiro lugar. Cada detalhe é pensado para oferecer o melhor atendimento, seja para iniciantes ou para atletas experientes. Não importa onde você esteja na sua jornada, o CT MegaFitness está aqui para ajudar você a dar o próximo passo.Venha descobrir como podemos transformar sua rotina de treinos em uma experiência incrível!";
+    "Nosso espaço é projetado para oferecer conforto e funcionalidade, tornando cada treino um momento prazeroso e eficiente. Nossa equipe de professores altamente qualificados está sempre pronta para oferecer orientação personalizada, ajudando você a atingir seus objetivos de saúde e desenvolvimento com excelência. Aqui, colocamos nossos alunos em primeiro lugar. Cada detalhe é pensado para oferecer o melhor atendimento, seja para iniciantes ou para atletas experientes. Não importa onde você esteja na sua jornada, o CT MegaFitness está aqui para ajudar você a dar o próximo passo. Venha descobrir como podemos transformar sua rotina de treinos em uma experiência incrível!";
 
   return (
     <section id="sobre-nos" className="flex min-h-screen">
