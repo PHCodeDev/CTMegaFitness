@@ -2,8 +2,20 @@ import { useEffect } from "react";
 import OpenStreetMap from "../components/OpenStreetMap";
 import "font-awesome/css/font-awesome.min.css";
 import SobreNos from "../components/SobreNos";
-import FloatingChatBot from '../components/FloatingChatBot'
+import FloatingChatBot from "../components/FloatingChatBot";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faWhatsapp,
+  faInstagram,
+  faGoogle,
+} from "@fortawesome/free-brands-svg-icons";
 
+const handleCopyEmail = () => {
+  const email = "diassispersonal@gmail.com";
+  navigator.clipboard.writeText(email).then(() => {
+    alert("E-mail copiado: " + email);
+  });
+};
 export default function Home() {
   useEffect(() => {
     const handleSmoothScroll = (e) => {
@@ -18,7 +30,7 @@ export default function Home() {
       }
     };
 
-    const smoothScrollLinks = document.querySelectorAll('[data-scroll]');
+    const smoothScrollLinks = document.querySelectorAll("[data-scroll]");
     smoothScrollLinks.forEach((link) =>
       link.addEventListener("click", handleSmoothScroll)
     );
@@ -32,12 +44,12 @@ export default function Home() {
 
   return (
     <div>
-      <FloatingChatBot/>
+      <FloatingChatBot />
       <section className='bg-[url("https://i.ibb.co/nP8z63Q/Principal.webp")] lg:bg-fixed bg-no-repeat bg-cover h-auto lg:h-[100vh] flex'>
         <div className="w-[90%] max-w-[1600px] mx-auto flex flex-col lg:flex-row justify-between gap-8 lg:gap-0">
           <div className="flex flex-col justify-center text-white text-center lg:text-left items-center lg:items-start">
             <img
-              className="my-8 lg:w-auto mb-4 lg:absolute lg:top-8 lg:left-16"
+              className="my-8 lg:my-0 lg:w-auto mb-4 lg:top-8 lg:left-16"
               src="https://i.ibb.co/F6ZxTjP/LogoCt.png"
               alt="Logo CT MegaFitness"
             />
@@ -56,6 +68,68 @@ export default function Home() {
             >
               Saiba Mais
             </a>
+
+            <ul className="flex space-x-4 mt-10">
+              <li className="relative group">
+                <span className="absolute bottom-full mb-2 w-32 text-center text-xs bg-white text-black rounded py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  WhatsApp
+                </span>
+                <span
+                  className="flex justify-center items-center w-12 h-12 rounded-full transition-transform transform hover:scale-110 shadow-lg"
+                  style={{ backgroundColor: "rgb(37, 211, 102)" }}
+                >
+                  <a
+                    href="https://wa.me/5588999079676"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex justify-center items-center w-full h-full"
+                  >
+                    <FontAwesomeIcon
+                      icon={faWhatsapp}
+                      className="text-white text-3xl"
+                    />
+                  </a>
+                </span>
+              </li>
+
+              <li className="relative group">
+                <span className="absolute bottom-full mb-2 w-32 text-center text-xs bg-white text-black rounded py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Instagram
+                </span>
+                <span
+                  className="flex justify-center items-center w-12 h-12 rounded-full transition-transform transform hover:scale-110 shadow-lg"
+                  style={{ backgroundColor: "#E4405F" }}
+                >
+                  <a
+                    href="https://www.instagram.com/ctmegafitness/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex justify-center items-center w-full h-full"
+                  >
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      className="text-white text-3xl"
+                    />
+                  </a>
+                </span>
+              </li>
+
+              <li className="relative group">
+                <span className="absolute bottom-full mb-2 w-32 text-center text-xs bg-white text-black rounded py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Copiar E-mail
+                </span>
+                <span
+                  className="flex justify-center items-center w-12 h-12 rounded-full transition-transform transform hover:scale-110 shadow-lg cursor-pointer"
+                  style={{ backgroundColor: "rgb(219, 68, 55)" }}
+                  onClick={handleCopyEmail}
+                >
+                  <FontAwesomeIcon
+                    icon={faGoogle}
+                    className="text-white text-3xl"
+                  />
+                </span>
+              </li>
+            </ul>
           </div>
 
           <div className="flex items-center lg:items-end">
@@ -158,39 +232,9 @@ export default function Home() {
         </h2>
         <OpenStreetMap />
       </section>
-      
+
       <footer className="bg-marrom py-8 font-semibold">
         <div className="w-[90%] max-w-[1200px] mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
-            <div className="flex items-start lg:items-center text-branco space-x-4">
-              <img
-                className="h-10 2xl:h-14"
-                src="https://i.ibb.co/1zS13WC/Rectangle-212.png"
-                alt="Ícone de endereço"
-              />
-              <p className="text-[16px] lg:text-[15px] 2xl:text-[25px]">
-                R. Prefeito Catunda Fontele<br /> N•73,
-                Ipueiras, Ceará 
-              </p>
-            </div>
-            <div className="flex items-start lg:items-center text-branco space-x-4">
-              <img
-                className="h-9 2xl:h-12"
-                src="https://i.ibb.co/sHHrQQD/image-16.png"
-                alt="Ícone de telefone"
-              />
-              <p className="text-[18px] lg:text-[15px] 2xl:text-[25px]">+55 88 99907-9676</p>
-            </div>
-            <div className="flex items-start lg:items-center text-branco space-x-4">
-              <img
-                className="h-7 2xl:h-10"
-                src="https://i.ibb.co/mcj7kxx/Rectangle-211.png"
-                alt="Ícone de e-mail"
-              />
-              <p className="text-[18px] lg:text-[15px] 2xl:text-[25px]">diassispersonal@gmail.com</p>
-            </div>
-          </div>
-          <div className="h-[1px] bg-cinza my-5 w-full"></div>
           <div className="flex items-center">
             <p className="text-branco mx-auto text-center text-[14px] lg:text-[15px] 2xl:text-[25px]">
               Todos os direitos Reservados | CTMegaFitness - 2024
