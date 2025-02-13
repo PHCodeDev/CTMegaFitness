@@ -12,7 +12,7 @@ const FloatingChatBot = () => {
     },
     {
       question: 'Quanto é a mensalidade?',
-      answer: 'A mensalidade custa R$ 60,00.'
+      answer: 'A mensalidade custa R$ 70,00.'
     },
     {
       question: 'Tem aula experimental?',
